@@ -44,7 +44,7 @@ function nivel(pct) {
 
 const Indicador = GObject.registerClass(
 class Indicador extends PanelMenu.Button {
-    _init(script) {
+    _init(script, icono) {
         super._init(0.0, 'Memoria');
         this._script = script;
         this._cancelable = new Gio.Cancellable();
@@ -56,8 +56,12 @@ class Indicador extends PanelMenu.Button {
         this._cerrando = new Set();
         this._temporizadores = new Set();
 
-        this._texto = etiqueta('RAM', 'mm-barra-texto');
-        this.add_child(this._texto);
+        const caja = new St.BoxLayout({style_class: 'panel-status-menu-box'});
+        caja.add_child(new St.Icon({gicon: Gio.icon_new_for_string(icono), style_class: 'system-status-icon'}));
+        this._texto = etiqueta('', 'mm-barra-texto');
+        caja.add_child(this._texto);
+        this.add_child(caja);
+        this.accessible_name = 'Memoria RAM';
 
         this._seccionTotales = new PopupMenu.PopupMenuSection();
         this._seccionLista = new PopupMenu.PopupMenuSection();
@@ -100,7 +104,8 @@ class Indicador extends PanelMenu.Button {
     _pintarBarra() {
         const t = totales();
         const pct = t.ramTotal ? Math.round(t.ramUsada / t.ramTotal * 100) : 0;
-        this._texto.text = `RAM ${pct}%`;
+        this._texto.text = `${pct}%`;
+        this.accessible_name = `Memoria RAM usada: ${pct} %`;
         this._texto.remove_style_class_name('mm-alto');
         this._texto.remove_style_class_name('mm-critico');
         if (nivel(pct))
@@ -303,7 +308,8 @@ class Indicador extends PanelMenu.Button {
 
 export default class Memoria extends Extension {
     enable() {
-        this._indicador = new Indicador(GLib.build_filenamev([this.path, 'procesos.py']));
+        this._indicador = new Indicador(GLib.build_filenamev([this.path, 'procesos.py']),
+            GLib.build_filenamev([this.path, 'iconos', 'memoria.svg']));
         // A la izquierda, al final: junto al nombre de la app abierta.
         Main.panel.addToStatusArea(this.uuid, this._indicador, -1, 'left');
     }

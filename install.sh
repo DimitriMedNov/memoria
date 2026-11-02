@@ -27,6 +27,7 @@ PY
 
 mkdir -p "$EXT"
 cp extension/*.js extension/*.py extension/metadata.json extension/stylesheet*.css "$EXT/"
+rm -rf "$EXT/iconos" && cp -r extension/iconos "$EXT/"
 activar
 
 echo "Memoria instalado. Cierra sesión y vuelve a entrar para que GNOME lo cargue."

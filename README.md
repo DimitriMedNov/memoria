@@ -1,6 +1,6 @@
 # Memoria
 
-Extensión de GNOME que muestra en la barra de arriba cuánta RAM llevas usada (`RAM 48%`) y, al
+Extensión de GNOME que muestra en la barra de arriba cuánta RAM llevas usada (un ícono de chip y `48%`) y, al
 hacer clic, la RAM, la swap y los programas que más gastan, con un botón para cerrar alguno.
 
 ![Menú de Memoria](capturas/menu.png)
