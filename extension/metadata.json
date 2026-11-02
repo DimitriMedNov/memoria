@@ -1,0 +1,8 @@
+{
+  "uuid": "memoria@dimitrimednov.github.io",
+  "name": "Memoria",
+  "description": "Cuánta RAM y swap llevas usadas, en la barra de arriba, y los programas que más gastan con un botón para cerrarlos.",
+  "shell-version": ["48", "49", "50", "51"],
+  "url": "https://github.com/DimitriMedNov/memoria",
+  "version": 1
+}

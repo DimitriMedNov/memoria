@@ -1,0 +1,33 @@
+/* Memoria, tema oscuro (también es el respaldo si GNOME no pide una variante). */
+.mm-barra-texto { font-weight: bold; }
+.mm-alto { color: #f6d32d; }
+.mm-critico { color: #ff7b63; font-weight: bold; }
+
+/* Las filas fijas del menú salen atenuadas por GNOME; el color explícito las devuelve al blanco. */
+.mm-titulo { font-weight: bold; color: #ffffff; }
+.mm-nombre { font-weight: bold; color: #ffffff; padding-right: 12px; }
+.mm-cifra { font-weight: bold; color: #ffffff; }
+.mm-detalle { font-size: 0.85em; color: #c0bfbc; }
+.mm-icono { margin-right: 10px; }
+
+.mm-seccion { font-size: 0.85em; color: #c0bfbc; padding-right: 12px; }
+.mm-linea { height: 1px; background-color: rgba(255, 255, 255, 0.15); }
+
+.mm-barra { height: 6px; border-radius: 3px; background-color: rgba(154, 153, 150, 0.35); margin: 5px 0; }
+.mm-relleno { height: 6px; border-radius: 3px; background-color: #62a0ea; }
+.mm-relleno.mm-alto-fondo { background-color: #f6d32d; }
+.mm-relleno.mm-critico-fondo { background-color: #ff7b63; }
+
+.mm-esqueleto { height: 12px; border-radius: 6px; margin: 4px 0; background-color: rgba(154, 153, 150, 0.25); }
+.mm-esqueleto-chico { height: 9px; }
+
+.mm-lugar-boton { width: 96px; margin-left: 8px; }
+/* 44 px de alto: área cómoda para el clic. */
+.mm-boton { min-width: 44px; height: 44px; border-radius: 22px; color: #ffffff; }
+.mm-boton:hover, .mm-boton:focus { background-color: rgba(255, 255, 255, 0.12); }
+.mm-boton:focus { box-shadow: inset 0 0 0 2px #78aeed; }
+.mm-confirmar { padding: 0 14px; font-weight: bold; background-color: #c01c28; }
+.mm-confirmar:hover, .mm-confirmar:focus { background-color: #e01b24; }
+.mm-boton:insensitive { color: rgba(255, 255, 255, 0.35); }
+.mm-boton-texto { height: 44px; padding: 0 14px; border-radius: 22px; color: #ffffff; background-color: rgba(255, 255, 255, 0.12); }
+.mm-boton-texto:hover, .mm-boton-texto:focus { background-color: rgba(255, 255, 255, 0.2); }
